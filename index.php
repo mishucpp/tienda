@@ -40,7 +40,7 @@
              </div>
              
              <div class="row">
-                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
                <div class="card">
                    <img
                    title="Titulo del producto"
