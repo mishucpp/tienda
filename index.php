@@ -49,7 +49,7 @@
                    class="card-img-top" src="">
                    <div class="card-body">
                    <span>Titulo del producto</span>
-                       <h5 class="card-title">$200.00</h5>
+                       <h5 class="card-title">$300.00</h5>
                        <p class="card-text">Descripción</p>
                        <button class="btn btn-primary" name="btnAccion" value="Agregar" type="submit">agregar al carrito</button>
                    </div>
