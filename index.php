@@ -1,3 +1,7 @@
+<?php
+include 'global/config.php';
+include 'global/conexion.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,10 +37,12 @@
     </nav>
 
         <div class="container">
-        
+        <br>
+        <br>
+        <br>
             <div class="alert alert-success">
                  Pantalla de mensaje...
-                <a href="" class="badge badge-success">Ver carrito</a>
+                <a href="#" class="badge badge-success">Ver carrito</a>
              </div>
              
              <div class="row">
