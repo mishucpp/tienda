@@ -41,26 +41,50 @@ include 'global/conexion.php';
         <br>
         <br>
             <div class="alert alert-success">
-                 Pantalla de mensaje...
+                 Pantalla de mensaje... 
+                 <?php 
+                 print_r($_POST);
+                 ?>
                 <a href="#" class="badge badge-success">Ver carrito</a>
              </div>
              
              <div class="row">
+             <?php
+                 $sentencia=$pdo->prepare("SELECT * FROM tblproductos");
+                 $sentencia->execute();
+                 $listaProductos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+                print_r($listaProductos);
+?> 
+<?php foreach($listaProductos as $producto){
+    ?>
+
                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-               <div class="card">
+                   <div class="card">
                    <img
-                   title="Titulo del producto"
+                   title="<?php echo$producto['nombre'];?>"
                    alt="titulo"
-                   src="https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9781/4842/9781484217290.jpg"
+                   src="<?php echo$producto['imagen'];?>"
                    class="card-img-top" src="">
                    <div class="card-body">
-                   <span>Titulo del producto</span>
-                       <h5 class="card-title">$300.00</h5>
-                       <p class="card-text">Descripción</p>
-                       <button class="btn btn-primary" name="btnAccion" value="Agregar" type="submit">agregar al carrito</button>
+                   <span><?php echo$producto['nombre'];?></span>
+                       <h5 class="card-title">$<?php echo$producto['precio'];?></h5>
+                       <p class="card-text"><?php echo$producto['descripcion'];?></p>
+                       <form action="" method="post">
+                       <input type="text" value="<?php echo openssl_encrypt($producto['id'],COD,KEY);?>" name="id" id="id">
+                       <input type="text" value="<?php echo openssl_encrypt($producto['nombre'],COD,KEY);?>" name="nombre" id="nombre">
+                       <input type="text" value="<?php echo openssl_encrypt($producto['precio'],COD,KEY);?>" name="precio" id="precio">
+                       <input type="text" value="<?php echo openssl_encrypt(1,COD,KEY);?>" name="cantidad" id="cantidad">
+                       <button class="btn btn-primary" name="btnAccion"
+                        value="Agregar"
+                         type="submit">agregar al carrito</button>
+                       </form>
+                     
                    </div>
-               </div>
+                  </div>
                  </div>
+                 
+    <?php
+}?>
                  
              </div>
              
