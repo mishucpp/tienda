@@ -11,7 +11,7 @@ if(isset($_POST['btnAccion'])){
         }else{
             $mensaje.="ups ID incorrecto". $ID;
 
-        }
+        }asdjasdkjaksdaisd aápsdoajisd qwdqwdsadasd
         break;
         if(is_numeric( openssl_decrypt($_POST['nombre'],COD,KEY))){
             $NOMBRE=openssl_decrypt($_POST['nombre'],COD,KEY);
