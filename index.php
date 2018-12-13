@@ -1,6 +1,7 @@
 <?php
 include 'global/config.php';
 include 'global/conexion.php';
+include 'carrito.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,9 +42,9 @@ include 'global/conexion.php';
         <br>
         <br>
             <div class="alert alert-success">
-                 Pantalla de mensaje... 
+                
                  <?php 
-                 print_r($_POST);
+                 echo $mensaje;
                  ?>
                 <a href="#" class="badge badge-success">Ver carrito</a>
              </div>
