@@ -26,7 +26,9 @@
                     <a class="nav-link" href="index.php">home</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="mostrarCarrito.php">tienda</a>
+                    <a class="nav-link" href="mostrarCarrito.php">Carrito(<?php #endregion
+                    echo(empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);
+                    ?>)</a>
                 </li>
             </ul>
         </div>
