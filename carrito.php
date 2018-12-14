@@ -11,7 +11,7 @@ if(isset($_POST['btnAccion'])){
         }else{
             $mensaje.="ups ID incorrecto". $ID."<br>";
 
-        break;}
+        }
         
         if(is_string( openssl_decrypt($_POST['nombre'],COD,KEY))){
             $NOMBRE=openssl_decrypt($_POST['nombre'],COD,KEY);
@@ -34,9 +34,30 @@ if(isset($_POST['btnAccion'])){
     $mensaje.="oK precio correcto". $PRECIO."<br>";
 }else{
  $mensaje.="ups precio incorrecto". $PRECIO."<br>";
-
-break;
+ break;
 }
+
+ if (!isset($_SESSION['CARRITO'])) {
+     $producto=array(
+         'ID'=>$ID,
+         'NOMBRE'=>$NOMBRE,
+         'CANTIDAD'=>$CANTIDAD,
+         'PRECIO'=>$PRECIO
+     );
+     $_SESSION['CARRITO'][0]=$producto;
+ }else{
+     $numeroProductos=count($_SESSION['CARRITO']);
+     $producto=array(
+        'ID'=>$ID,
+        'NOMBRE'=>$NOMBRE,
+        'CANTIDAD'=>$CANTIDAD,
+        'PRECIO'=>$PRECIO
+    );
+    $_SESSION['CARRITO'][$numeroProductos]=$producto;
+ }
+ $mensaje= print_r($_SESSION,true);
+break;
+
     }
 }
 
