@@ -9,13 +9,15 @@ include 'template/cabecera.php'
         <br>
         <br>
         <br>
+        <?php if($mensaje!="") {?>
             <div class="alert alert-success">
                 
                  <?php 
                  echo $mensaje;
                  ?>
-                <a href="#" class="badge badge-success">Ver carrito</a>
+                <a href="mostrarCarrito.php" class="badge badge-success">Ver carrito</a>
              </div>
+        <?php }?>
              
              <div class="row">
              <?php
